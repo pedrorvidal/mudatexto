@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                Todos os direitos reservados.
+                Construído por <a href="https://twitter.com/vidaldeveloper">Pedro Vidal</a>
             </div>
         </div>
     </div>
