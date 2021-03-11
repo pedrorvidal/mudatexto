@@ -15,7 +15,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                Construído por <a href="https://twitter.com/vidaldeveloper">Vidal</a>
+                <script id="CookieDeclaration" src="https://consent.cookiebot.com/c99ced47-8563-4353-acb7-b087161781dc/cd.js" type="text/javascript" async></script>
+                Construído por <a href="https://twitter.com/vidaldeveloper" target="_blank">Vidal</a>
             </div>
         </div>
     </div>

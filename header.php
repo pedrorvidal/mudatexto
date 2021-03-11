@@ -18,6 +18,7 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto&display=swap" rel="stylesheet">
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="c99ced47-8563-4353-acb7-b087161781dc" data-blockingmode="auto" type="text/javascript"></script>
     <?php wp_head(); ?>
 </head>
 
