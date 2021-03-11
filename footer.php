@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                sticky footer?
+                Todos os direitos reservados.
             </div>
         </div>
     </div>
