@@ -22,7 +22,7 @@ get_header();
         <div class="col-md-12 intro">
             <h1>Mude seu texto facilmente!</h1>
             <p>Esqueceu o CAPS ligado, precisa converter texto para maiúsculas, minúsculas, inverter o texto?</p>
-            <p>Você veio ao lugar certo! Utilize o formulário abaixo, digite ou cole seu texto, utilize os botões abaixo do formulário para converter, e depois pode utilizar o botão de "Copiar para a área de transferência" para utilizar seu texto onde quiser.</p>
+            <p>Você veio ao lugar certo! Utilize o formulário abaixo, digite ou cole seu texto, utilize os botões abaixo do formulário para converter, e depois pode utilizar o botão de "Copiar" para utilizar seu texto onde quiser.</p>
         </div>
         <div class="col-md-12 convertArea">
             <div class="alert alert-success alert-autocloseable-success" style="display:none">
