@@ -186,3 +186,28 @@ if ( defined( 'JETPACK__VERSION' ) ) {
     require get_template_directory() . '/dist/inc/jetpack.php';
 }
 
+/**
+ * mudatexto_remove_version used to remove WordPress Version generated tag
+ *
+ * @return void
+ */
+function mudatexto_remove_version() {
+    return '';
+}
+add_filter('the_generator', 'mudatexto_remove_version');
+
+/**
+ * Error messages for bad login attempts
+ *
+ * @return void
+ */
+function guwp_error_msgs() {
+  // insert how many msgs you want as array items. it will be shown randomly (html is allowed)
+  $custom_error_msgs = [
+    '<strong>YOU</strong> SHALL NOT PASS!',
+    '<strong>HEY!</strong> GET OUT OF HERE!',
+  ];
+  // get and returns a random array item to show as the error msg
+  return $custom_error_msgs[array_rand($custom_error_msgs)];
+}
+add_filter( 'login_errors', 'guwp_error_msgs' );
