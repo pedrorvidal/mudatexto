@@ -211,3 +211,10 @@ function guwp_error_msgs() {
   return $custom_error_msgs[array_rand($custom_error_msgs)];
 }
 add_filter( 'login_errors', 'guwp_error_msgs' );
+
+ /** * Usar extensão GD ao invés da Imagick
+ */
+function cb_child_use_gd_editor($array) {
+    return array( 'WP_Image_Editor_GD' );
+}
+add_filter( 'wp_image_editors', 'cb_child_use_gd_editor' );
