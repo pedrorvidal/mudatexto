@@ -218,3 +218,22 @@ function cb_child_use_gd_editor($array) {
     return array( 'WP_Image_Editor_GD' );
 }
 add_filter( 'wp_image_editors', 'cb_child_use_gd_editor' );
+
+/**
+ * Custom WordPress Logo in admin area
+ *
+ * @return void
+ */
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+        background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/dist/images/admin-logo.jpg);
+        height: 65px;
+        width: 320px;
+        background-size: 320px 65px;
+        background-repeat: no-repeat;
+            padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
