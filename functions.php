@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Muda Texto functions and definitions
  *
@@ -7,12 +8,12 @@
  * @package Muda_Texto
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
-    define( '_S_VERSION', '1.0.0' );
+    define('_S_VERSION', '1.0.0');
 }
 
-if ( ! function_exists( 'mudatexto_setup' ) ) :
+if (!function_exists('mudatexto_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
      *
@@ -20,17 +21,18 @@ if ( ! function_exists( 'mudatexto_setup' ) ) :
      * runs before the init hook. The init hook is too late for some features, such
      * as indicating support for post thumbnails.
      */
-    function mudatexto_setup() {
+    function mudatexto_setup()
+    {
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
          * If you're building a theme based on Muda Texto, use a find and replace
          * to change 'mudatexto' to the name of your theme in all the template files.
          */
-        load_theme_textdomain( 'mudatexto', get_template_directory() . '/dist/languages' );
+        load_theme_textdomain('mudatexto', get_template_directory() . '/dist/languages');
 
         // Add default posts and comments RSS feed links to head.
-        add_theme_support( 'automatic-feed-links' );
+        add_theme_support('automatic-feed-links');
 
         /*
          * Let WordPress manage the document title.
@@ -38,19 +40,19 @@ if ( ! function_exists( 'mudatexto_setup' ) ) :
          * hard-coded <title> tag in the document head, and expect WordPress to
          * provide it for us.
          */
-        add_theme_support( 'title-tag' );
+        add_theme_support('title-tag');
 
         /*
          * Enable support for Post Thumbnails on posts and pages.
          *
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
          */
-        add_theme_support( 'post-thumbnails' );
+        add_theme_support('post-thumbnails');
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(
             array(
-                'menu-1' => esc_html__( 'Primary', 'mudatexto' ),
+                'menu-1' => esc_html__('Primary', 'mudatexto'),
             )
         );
 
@@ -84,7 +86,7 @@ if ( ! function_exists( 'mudatexto_setup' ) ) :
         );
 
         // Add theme support for selective refresh for widgets.
-        add_theme_support( 'customize-selective-refresh-widgets' );
+        add_theme_support('customize-selective-refresh-widgets');
 
         /**
          * Add support for core custom logo.
@@ -102,7 +104,7 @@ if ( ! function_exists( 'mudatexto_setup' ) ) :
         );
     }
 endif;
-add_action( 'after_setup_theme', 'mudatexto_setup' );
+add_action('after_setup_theme', 'mudatexto_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,22 +113,24 @@ add_action( 'after_setup_theme', 'mudatexto_setup' );
  *
  * @global int $content_width
  */
-function mudatexto_content_width() {
-    $GLOBALS['content_width'] = apply_filters( 'mudatexto_content_width', 640 );
+function mudatexto_content_width()
+{
+    $GLOBALS['content_width'] = apply_filters('mudatexto_content_width', 640);
 }
-add_action( 'after_setup_theme', 'mudatexto_content_width', 0 );
+add_action('after_setup_theme', 'mudatexto_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function mudatexto_widgets_init() {
+function mudatexto_widgets_init()
+{
     register_sidebar(
         array(
-            'name'          => esc_html__( 'Sidebar', 'mudatexto' ),
+            'name'          => esc_html__('Sidebar', 'mudatexto'),
             'id'            => 'sidebar-1',
-            'description'   => esc_html__( 'Add widgets here.', 'mudatexto' ),
+            'description'   => esc_html__('Add widgets here.', 'mudatexto'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title">',
@@ -134,30 +138,31 @@ function mudatexto_widgets_init() {
         )
     );
 }
-add_action( 'widgets_init', 'mudatexto_widgets_init' );
+add_action('widgets_init', 'mudatexto_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
-function mudatexto_scripts() {
-    wp_enqueue_style( 'mudatexto-style', get_stylesheet_uri(), array(), _S_VERSION );
-    wp_style_add_data( 'mudatexto-style', 'rtl', 'replace' );
+function mudatexto_scripts()
+{
+    wp_enqueue_style('mudatexto-style', get_stylesheet_uri(), array(), _S_VERSION);
+    wp_style_add_data('mudatexto-style', 'rtl', 'replace');
     wp_enqueue_style('mudatexto-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', array(), _S_VERSION);
     wp_enqueue_style('mudatexto-custom', get_stylesheet_directory_uri() . '/dist/css/custom.min.css', array(), _S_VERSION);
 
-    wp_enqueue_script( 'mudatexto-navigation', get_template_directory_uri() . '/dist/js/navigation.js', array(), _S_VERSION, true );
-    wp_enqueue_script('mudatexto-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js', array ( 'jquery' ), _S_VERSION, true);
+    wp_enqueue_script('mudatexto-navigation', get_template_directory_uri() . '/dist/js/navigation.js', array(), _S_VERSION, true);
+    wp_enqueue_script('mudatexto-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js', array('jquery'), _S_VERSION, true);
 
-    wp_enqueue_script( 'mudatexto-clipboard', 'https://cdn.jsdelivr.net/npm/clipboard@2.0.7/dist/clipboard.min.js' , array(), _S_VERSION, true );
+    wp_enqueue_script('mudatexto-clipboard', 'https://cdn.jsdelivr.net/npm/clipboard@2.0.7/dist/clipboard.min.js', array(), _S_VERSION, true);
 
-    wp_enqueue_script( 'mudatexto-custom', get_template_directory_uri() . '/dist/js/scripts.min.js', array('jquery', 'mudatexto-clipboard'), _S_VERSION, true );
+    wp_enqueue_script('mudatexto-custom', get_template_directory_uri() . '/dist/js/scripts.min.js', array('jquery', 'mudatexto-clipboard'), _S_VERSION, true);
 
 
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
     }
 }
-add_action( 'wp_enqueue_scripts', 'mudatexto_scripts' );
+add_action('wp_enqueue_scripts', 'mudatexto_scripts');
 
 /**
  * Implement the Custom Header feature.
@@ -182,7 +187,7 @@ require get_template_directory() . '/dist/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
+if (defined('JETPACK__VERSION')) {
     require get_template_directory() . '/dist/inc/jetpack.php';
 }
 
@@ -191,7 +196,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  *
  * @return void
  */
-function mudatexto_remove_version() {
+function mudatexto_remove_version()
+{
     return '';
 }
 add_filter('the_generator', 'mudatexto_remove_version');
@@ -201,39 +207,51 @@ add_filter('the_generator', 'mudatexto_remove_version');
  *
  * @return void
  */
-function guwp_error_msgs() {
-  // insert how many msgs you want as array items. it will be shown randomly (html is allowed)
-  $custom_error_msgs = [
-    '<strong>YOU</strong> SHALL NOT PASS!',
-    '<strong>HEY!</strong> GET OUT OF HERE!',
-  ];
-  // get and returns a random array item to show as the error msg
-  return $custom_error_msgs[array_rand($custom_error_msgs)];
+function guwp_error_msgs()
+{
+    // insert how many msgs you want as array items. it will be shown randomly (html is allowed)
+    $custom_error_msgs = [
+        '<strong>YOU</strong> SHALL NOT PASS!',
+        '<strong>HEY!</strong> GET OUT OF HERE!',
+    ];
+    // get and returns a random array item to show as the error msg
+    return $custom_error_msgs[array_rand($custom_error_msgs)];
 }
-add_filter( 'login_errors', 'guwp_error_msgs' );
+add_filter('login_errors', 'guwp_error_msgs');
 
- /** * Usar extensão GD ao invés da Imagick
+/** * Usar extensão GD ao invés da Imagick
  */
-function cb_child_use_gd_editor($array) {
-    return array( 'WP_Image_Editor_GD' );
+function cb_child_use_gd_editor($array)
+{
+    return array('WP_Image_Editor_GD');
 }
-add_filter( 'wp_image_editors', 'cb_child_use_gd_editor' );
+add_filter('wp_image_editors', 'cb_child_use_gd_editor');
 
 /**
  * Custom WordPress Logo in admin area
  *
  * @return void
  */
-function my_login_logo() { ?>
+function my_login_logo()
+{ ?>
     <style type="text/css">
-        #login h1 a, .login h1 a {
-        background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/dist/images/admin-logo.jpg);
-        height: 65px;
-        width: 320px;
-        background-size: 320px 65px;
-        background-repeat: no-repeat;
+        #login h1 a,
+        .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/dist/images/admin-logo.jpg);
+            height: 65px;
+            width: 320px;
+            background-size: 320px 65px;
+            background-repeat: no-repeat;
             padding-bottom: 30px;
+        }
+
+        body.login {
+            background-color: #212429;
+        }
+
+        body.login div#login form#loginform p.submit input#wp-submit {
+            background-color: #E34B86;
         }
     </style>
 <?php }
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
+add_action('login_enqueue_scripts', 'my_login_logo');
