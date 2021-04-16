@@ -18,6 +18,7 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto&display=swap" rel="stylesheet">
+    <script data-ad-client="ca-pub-6773763764475546" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <?php wp_head(); ?>
 </head>
 
