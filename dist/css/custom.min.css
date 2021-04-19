@@ -25,8 +25,9 @@ textarea:hover,input:hover,textarea:active,input:active,textarea:focus,input:foc
 .convertArea{position:relative}
 .alert-autocloseable-success{position:absolute;top:20%;right:40%;z-index:999}
 .footer{padding:10px 0;background:#333;color:#b9b9b9;font-size:.8em}
-.content-home{margin-top:60px;margin-bottom:100px}
+.content-home{margin-top:60px;margin-bottom:75px}
 .content-home p{font-size:.8em}
 .footer p{font-size:.75em;text-transform:uppercase;padding-top:10px}
 .footer p a{color:#e34b86;text-decoration:none}
 .footer p a:hover{text-decoration:underline}
+.content-historia{padding-bottom:50px}
