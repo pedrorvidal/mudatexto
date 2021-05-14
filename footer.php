@@ -15,7 +15,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="text-center">Construído por <a href="https://twitter.com/vidaldeveloper" target="_blank">@VidalDeveloper</a></p>
+                <p class="text-center">Construído por
+                    <a href="https://twitter.com/vidaldeveloper" target="_blank">@VidalDeveloper</a>
+                    <br>
+                    <a class="text-center" href="<?php echo site_url('/politica-de-privacidade'); ?>" target="">Política de Privacidade/Privacy Policy</a>
+                </p>
             </div>
         </div>
     </div>
